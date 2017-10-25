@@ -7,10 +7,30 @@
 Basic	lib/basic_shortener.ex	/^defmodule Shortener.Basic do$/;"	m
 BasicShortenerTest	test/basic_shortener_test.exs	/^defmodule BasicShortenerTest do$/;"	m
 MixProject	mix.exs	/^defmodule UrlShortener.MixProject do$/;"	m
+Server	lib/server_shortener.ex	/^defmodule Shortener.Server do$/;"	m
+ShortenerServerTest	test/shortener_server_test.exs	/^defmodule ShortenerServerTest do$/;"	m
+ShortenerWorkerTest	test/shortener_worker_test.exs	/^defmodule ShortenerWorkerTest do$/;"	m
+Worker	lib/worker.ex	/^defmodule Shortener.Worker do$/;"	m
 application	mix.exs	/^  def application do$/;"	f
 deps	mix.exs	/^  defp deps do$/;"	f
 finding a url that does not exist	test/basic_shortener_test.exs	/^  test "finding a url that does not exist", %{pid: pid} do$/;"	t
+finding a url that does not exist	test/shortener_server_test.exs	/^  test "finding a url that does not exist", %{pid: pid} do$/;"	t
+handle_call	lib/server_shortener.ex	/^  def handle_call({:shorten, short, url}, _from, state) do$/;"	f
+handle_call	lib/server_shortener.ex	/^  def handle_call({:url, short}, _from, state) do$/;"	f
+handle_call	lib/worker.ex	/^  def handle_call({:shorten, url, short}, _from, table) do$/;"	f
+handle_call	lib/worker.ex	/^  def handle_call({:url, short}, _from, table) do$/;"	f
+init	lib/server_shortener.ex	/^  def init(state) do$/;"	f
+init	lib/worker.ex	/^  def init(table) do$/;"	f
 loop	lib/basic_shortener.ex	/^  def loop(state) do$/;"	f
 project	mix.exs	/^  def project do$/;"	f
+reading a shortened url from any worker	test/shortener_worker_test.exs	/^  test "reading a shortened url from any worker", state do$/;"	t
+shorten	lib/server_shortener.ex	/^  def shorten(pid, url, short) do$/;"	f
+shorten	lib/worker.ex	/^  def shorten(pid, url, short) do$/;"	f
 shortening a url	test/basic_shortener_test.exs	/^  test "shortening a url", %{pid: pid} do$/;"	t
+shortening a url	test/shortener_server_test.exs	/^  test "shortening a url", %{pid: pid} do$/;"	t
+shortening to an existing alias	test/shortener_server_test.exs	/^  test "shortening to an existing alias", %{pid: pid} do$/;"	t
 start_link	lib/basic_shortener.ex	/^  def start_link do$/;"	f
+start_link	lib/server_shortener.ex	/^  def start_link(opts \\\\ []) do$/;"	f
+start_link	lib/worker.ex	/^  def start_link(table, opts \\\\ []) do$/;"	f
+url	lib/server_shortener.ex	/^  def url(pid, short) do$/;"	f
+url	lib/worker.ex	/^  def url(pid, short) do$/;"	f
