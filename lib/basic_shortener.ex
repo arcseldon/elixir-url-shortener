@@ -8,6 +8,7 @@ defmodule Shortener.Basic do
       {:shorten, pid, short, url} ->
         send(pid, :ok)
         loop(Map.put(state, short, url))
+
       {:url, pid, short} ->
         send(pid, Map.fetch(state, short))
         loop(state)
